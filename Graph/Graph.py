@@ -52,6 +52,3 @@ class Graph:
                           for dest_node, length in dest_entry.items()])
         nodes = start_nodes.union(dest_nodes)
         return list(nodes)
-
-    def UndirectedGraph(graph_dict=None):
-        return Graph(graph_dict=graph_dict, directed=False)

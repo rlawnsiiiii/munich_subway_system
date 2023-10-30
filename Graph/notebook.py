@@ -14,6 +14,19 @@ from PIL import Image
 from matplotlib import lines
 
 
+def get_node_by_node_name(node_set, node_name):
+    """
+    Return the node with given node_name from node_set
+    :param node_set: set(Node)
+    :param node_name: str
+    :return: Node
+    """
+    for node in node_set:
+        if node.name == node_name:
+            return node
+    return None
+
+
 def show_map(graph_data, node_colors=None):
     G = nx.Graph(graph_data['graph_dict'])
     node_colors = node_colors or graph_data['node_colors']
