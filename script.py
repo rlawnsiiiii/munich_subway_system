@@ -29,7 +29,7 @@ for line in LINES:
             if node_name in nodes_names:  # Node already created
                 node = nb.get_node_by_node_name(nodes, node_name)
                 node.add_line(line)
-                line_list.append(Node)
+                line_list.append(node)
             else:
                 node = Node(name=node_name)
                 node.add_line(line)
@@ -50,4 +50,13 @@ for line in LINES_DICT.values():
                 print(f"connecting to {line[i + 1].name}")
                 subway_graph.connect(line[i], line[i + 1])
 
+"""# save locations of each station
+with open(PATH + "stops.csv", 'r', newline='', encoding="'utf-8-sig'") as file:
+    csv_reader = csv.reader(file)
+    rows = list(csv_reader)
+    for row in rows[0]:
+        print(row.split(";")[2])
+        print(row.split(";")[3])
+        print(row.split(";")[4])
 
+"""
