@@ -25,6 +25,9 @@ class Node:
     def add_line(self, line):
         self.line.add(line)
 
+    def __repr__(self):
+        return self.name
+
     def __lt__(self, other):
         """Returns True if the state of this node is less than the state of other"""
         return self.priority < other.priority
@@ -40,4 +43,3 @@ class Node:
             path_back.append(node)
             node = node.parent
         return list(reversed(path_back))
-
